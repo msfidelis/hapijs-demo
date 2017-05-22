@@ -1,0 +1,17 @@
+{
+  "name": "exemplo-api-quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "hapi": "^16.1.1",
+    "hapi-test-request": "0.0.4",
+    "mocha": "^3.4.1"
+  }
+}

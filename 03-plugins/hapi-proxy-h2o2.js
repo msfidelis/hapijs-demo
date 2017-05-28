@@ -15,7 +15,7 @@ server.route({
     path: '/',
     handler: {
        proxy: {
-            host: 'superlogica.com',
+            host: 'labs.superlogica.com',
             port: '80',
             protocol: 'http'
         }

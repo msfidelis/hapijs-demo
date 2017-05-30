@@ -13,6 +13,14 @@ Server.route({
     }
 })
 
+Server.route({
+    path: "/", 
+    method: "GET",
+    handler: (req, res) => {
+        res({"status":200})
+    }
+})
+
 Server.start((err) => {
     console.log("Rodando lindo!")
     console.log("Acesse http://localhost:8000/route")

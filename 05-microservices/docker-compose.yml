@@ -1,0 +1,27 @@
+version: "3"
+services:
+
+  gateway:
+    build: .
+    ports:
+      - 80:80
+    networks:
+      - api
+
+  auth:
+    build: auth
+    ports:
+      - 1300
+    networks:
+      - api
+
+  books:
+    build: books
+    ports:
+      - 1300
+    networks:
+      - api
+    
+
+networks: 
+  api:

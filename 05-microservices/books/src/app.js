@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
+const os = require('os')
 
 app.get('/', function (req, res) {
   res.send({
             Server: "CRUD Livros",
             Linguagem: "NodeJS",
-            Framework: "Express"
+            Framework: "Express",
+            Hostname: os.hostname()
         });
 });
 

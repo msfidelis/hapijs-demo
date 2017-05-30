@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi')
 const Server = new Hapi.Server()
+const os = require('os')
 
 Server.connection({port: 1300})
 
@@ -12,7 +13,8 @@ Server.route({
         res({
             Server: "Autenticação",
             Linguagem: "NodeJS",
-            Framework: "HapiJS"
+            Framework: "HapiJS",
+            Hostname: os.hostname()
         })
     }
 })

@@ -11,6 +11,9 @@ server.connection({
     port: 80
 })
 
+/**
+ * Service de Autenticação
+ */
 server.route({
     method: ['GET', 'POST'],
     path: '/auth',
@@ -21,6 +24,9 @@ server.route({
     }
 })
 
+/**
+ * Service de gerenciamento de livros
+ */
 server.route({
     method: 'GET',
     path: '/books',

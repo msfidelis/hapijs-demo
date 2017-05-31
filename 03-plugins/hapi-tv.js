@@ -1,27 +1,27 @@
-'use strict';
-// Load modules
+'use strict'
 
-const Hapi = require('hapi');
-const Inert = require('inert');
-const Vision = require('vision');
-const Tv = require('tv');
+const Hapi = require('hapi')
+const Inert = require('inert')
+const Vision = require('vision')
+const Tv = require('tv')
 
 // Declare internals
 
-const internals = {};
+const internals = {}
 
-internals.plugins = [Vision, Inert, Tv];
+internals.plugins = [Vision, Inert, Tv]
 
-const server = new Hapi.Server();
+const server = new Hapi.Server()
 
-server.connection({ host: "0.0.0.0", port: 8000 });
+server.connection({ host: "0.0.0.0", port: 8000 })
 
 server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
 
-        return reply('1');
+        return reply({"hello":"tiozao"})
+
     }
 });
 

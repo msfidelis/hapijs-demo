@@ -8,19 +8,49 @@ services:
     networks:
       - api
 
+    deploy:
+      replicas: 2
+
+      update_config:
+        parallelism: 2
+        delay: 2s
+
+      restart_policy:
+        condition: on-failure  
+
   auth:
-    build: auth
+    build: ./auth
     ports:
       - 1300
     networks:
       - api
 
+    deploy:
+      replicas: 4
+
+      update_config:
+        parallelism: 2
+        delay: 2s
+
+      restart_policy:
+        condition: on-failure  
+
   books:
-    build: books
+    build: ./books
     ports:
       - 1300
     networks:
       - api
+
+    deploy:
+      replicas: 2
+
+      update_config:
+        parallelism: 2
+        delay: 2s
+
+      restart_policy:
+        condition: on-failure  
     
 
 networks: 

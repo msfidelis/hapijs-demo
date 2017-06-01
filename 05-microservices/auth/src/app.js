@@ -20,6 +20,19 @@ Server.route({
 })
 
 Server.route({
+    path: "/login",
+    method : "POST", 
+    handler : (req, res) => {
+        res({
+            Server: "Autenticação",
+            Linguagem: "NodeJS",
+            Framework: "HapiJS",
+            Hostname: os.hostname()
+        })
+    }
+})
+
+Server.route({
     path: "/",
     method : "POST", 
     handler : (req, res) => {

@@ -24,6 +24,16 @@ server.route({
     }
 })
 
+server.route({
+    method: ['POST'],
+    path: '/auth/login',
+    handler:    {
+        proxy: {
+            uri: 'http://auth:1300/login'
+        }
+    }
+})
+
 /**
  * Service de gerenciamento de livros
  */
@@ -32,7 +42,8 @@ server.route({
     path: '/books',
     handler:    {
         proxy: {
-            uri: 'http://books:1300/'
+            uri: 'http://books:1300/',
+            passThrough: true,
         }
     }
 })
